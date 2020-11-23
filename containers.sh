@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "# Creating network"
 docker network create zk_kfk_app --driver bridge &
 echo ""
