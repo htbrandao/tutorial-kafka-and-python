@@ -4,9 +4,9 @@ from time import sleep
 from random import randint
 from confluent_kafka import Producer
 
-producer = Producer({'bootstrap.servers': 'localhost:9092'})
-TOPICO = 'topicarq30'
+from demo import bootstrap_servers, topic
 
+producer = Producer({'bootstrap.servers': bootstrap_servers[0]})
 
 def delivery_report(err, msg):
     """ Called once for each message produced to indicate delivery result.
@@ -21,10 +21,10 @@ if __name__ == '__main__':
     i = 0
     while True:
         producer.poll(0)
-        producer.produce(topic=TOPICO,
+        producer.produce(topic=topic,
                          value=f'olha o numero {randint(1, 100)}',
                          callback=delivery_report)
         print('#')
-        p.flush()
+        producer.flush()
         i += 1
         sleep(2)
