@@ -8,6 +8,7 @@ from demo import bootstrap_servers, topic
 
 producer = Producer({'bootstrap.servers': bootstrap_servers[0]})
 
+
 def delivery_report(err, msg):
     """ Called once for each message produced to indicate delivery result.
         Triggered by poll() or flush(). """
