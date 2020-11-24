@@ -1,2 +1,2 @@
-bootstrap_servers = ["localhost:9092"]
+bootstrap_servers = ["guilda_kafka_python_kafka_1:9092"]
 topic = 'topicarq30'
