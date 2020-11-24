@@ -4,9 +4,9 @@ from time import sleep
 from random import randint
 from confluent_kafka import Producer
 
-from demo import bootstrap_servers, topic
+from demo.config import bootstrap_servers, topic
 
-producer = Producer({'bootstrap.servers': bootstrap_servers[0]})
+producer = Producer({'bootstrap.servers': bootstrap_servers})
 
 
 def delivery_report(err, msg):
@@ -20,12 +20,8 @@ def delivery_report(err, msg):
 
 if __name__ == '__main__':
     i = 0
+    print(f'Conectando: {bootstrap_servers}/{topic}')
     while True:
-        producer.poll(0)
-        producer.produce(topic=topic,
-                         value=f'olha o numero {randint(1, 100)}',
-                         callback=delivery_report)
-        print('#')
-        producer.flush()
+        producer.produce(topic, f'olha o numero {randint(1, 100)}'.encode('utf-8'), callback=delivery_report)
         i += 1
         sleep(2)
