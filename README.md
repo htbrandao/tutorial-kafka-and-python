@@ -1,5 +1,6 @@
 # Apache Kafka and Python
 
+![](.img/kafka.png)
 # Kafka
 
 ### 1 - Intro
@@ -16,21 +17,15 @@ Technically speaking, event streaming is the practice of capturing data in real-
 
     - To process streams of events as they occur or retrospectively.
 
-Servers: Kafka is run as a cluster of one or more servers that can span multiple datacenters or cloud regions.
+Servers: Kafka is run as a cluster of one or more server.
 
 Clients: They allow you to write distributed applications and microservices that read, write, and process streams of events in parallel.
 
 Event records the fact that "something happened" in the world or in your business. It is also called record or message in the documentation. When you read or write data to Kafka, you do this in the form of events. Conceptually, an event has a **key**, **value**, **timestamp**, and optional metadata headers. 
 
-**Producers** are those client applications that publish (write) events to Kafka, and **consumers** are those that subscribe to (read and process) these events. In Kafka, producers and consumers are fully decoupled and agnostic of each other.
+**Producers** are those client applications that publish (write) events to Kafka, and **consumers** are those that subscribe to (read and process) these events. In Kafka, producers and consumers are fully decoupled and agnostic of each other. **Events** are organized and durably stored in topics.
 
-
-
-### 2 - API
-
-### 3 - Config
-
-### 4 - Design
+Topics have partitions and can be replicated across servers.
 
 # Python lib: confluent-kafka
 
