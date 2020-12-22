@@ -29,5 +29,5 @@ if __name__ == '__main__':
             continue
         else:
             r = msg.value().decode('utf-8')
-            r = sqrt(int(r.replace(r'NUMERO ', '')))
-            print(f'A RAIZ É {r}')
+            r = r.replace(r'NUMERO ', '')
+            print(f'O NUMERO É {r}')
