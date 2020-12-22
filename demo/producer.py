@@ -5,7 +5,9 @@ from random import randint
 
 from confluent_kafka import Producer
 
-from demo.config import bootstrap_servers, topic
+# from demo.config import bootstrap_servers, topic
+bootstrap_servers = "localhost:9092"
+topic = 'topicarq30'
 
 producer = Producer({'bootstrap.servers': bootstrap_servers})
 

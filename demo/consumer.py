@@ -4,7 +4,9 @@ from math import sqrt
 
 from confluent_kafka import Consumer
 
-from demo.config import bootstrap_servers, topic
+# from demo.config import bootstrap_servers, topic
+bootstrap_servers = "localhost:9092"
+topic = 'topicarq30'
 
 
 conf = {
